@@ -38,6 +38,8 @@ In standard configuration, the MIDI Thru output is available on a 5-pin header d
 
 Be sure to use some kind of standoffs or similar when connecting clumsyMIDI to the PI. Without them, the board may sit lopsided and come in contact with the HDMI port, potentially causing a short circuit. Apart from that, it's more mechanically stable and simply looks nicer :). The BOM contains the brass standoffs I am using in the pictures.
 
+A final general note: Use caution and common sense while working with electronics, especially while soldering stuff. As stated in the license, I am offering this PCB design as-is incuding any and all defects it may have and will not be held liable for any harm that comes to you or others as a result of using/building/looking at it.
+
 ## Software Config
 ### mt32-pi
 Follow the setup instructions on their site and then set the following options in `mt32-pi.cfg`:
