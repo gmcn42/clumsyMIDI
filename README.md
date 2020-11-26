@@ -1,6 +1,11 @@
 # clumsyMIDI
 A Raspberry Pi expansion board containing a MIDI interface, DAC, and OLED display requiring only through-hole soldering skills. This is primarily intended as an all-in-one hardware solution for the [mt32-pi Roland MT-32 emulator](https://github.com/dwhinham/mt32-pi) but all features are usable with Raspberry Pi OS, too.
 
+<p align="center">
+  <img src="https://github.com/gmcn42/clumsyMIDI/raw/main/pictures/IMGP8915-2.jpg" height="340">
+  <img src="https://github.com/gmcn42/clumsyMIDI/raw/main/pictures/IMGP8907-1.jpg" height="340">
+</p>
+
 ## Features
 * TI PCM5102 I2S HiFi DAC (using the ubiquitous GY-PCM5102 carrier board)
 * GPIO MIDI interface with in, out, and thru
@@ -16,6 +21,11 @@ Schematic and BOM are available in the [`pdf/` subfolder](https://github.com/gmc
 You can get a zip file with the Gerber files from the [`gerber/` subfolder](https://github.com/gmcn42/clumsyMIDI/tree/main/gerber) and let your favorite board house build the PCB. Alternatively, you can also order directly from PCBWAY via [this link](https://www.pcbway.com/project/shareproject/clumsyMIDI___Raspberry_Pi_expansion_board.html). Full disclosure: If you use this, I will get a small amount of money for your purchase.
 
 In case you want to make changes to the PCB before ordering somewhere, you can use [KiCAD](https://kicad.org/) and import the project.
+
+<p align="center">
+  <img src="https://github.com/gmcn42/clumsyMIDI/raw/main/pictures/IMGP8886.jpg" height="340">
+  <img src="https://github.com/gmcn42/clumsyMIDI/raw/main/pictures/IMGP8888.jpg" height="340">
+</p>
 
 ## Assembly
 As all components are through-hole, you should get by with basic soldering skills. It is usually the best idea to start with the flattest components and work your way up. The 40-Pin GPIO socket should be soldered on last, also remember that it goes on the *bottom* :).
@@ -56,5 +66,6 @@ To get regular ALSA MIDI support you need to bridge `/dev/ttyAMA0` and an ALSA M
 
 The I2C dislay is supported by the [Adafruit SSD1306 Python library](https://github.com/adafruit/Adafruit_Python_SSD1306.git), among others.
 
+Have fun!
 
-clumsyMIDI (c)2020 by A. Zdziarstek. This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/). [![CC BY-SA 4.0](https://licensebuttons.net/l/by-sa/4.0/88x31.png)](https://creativecommons.org/licenses/by-sa/4.0/)
+clumsyMIDI ©2020 by A. Zdziarstek.<br>This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/).<br>[![CC BY-SA 4.0](https://licensebuttons.net/l/by-sa/4.0/88x31.png)](https://creativecommons.org/licenses/by-sa/4.0/)
