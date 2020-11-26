@@ -1,0 +1,4 @@
+(sym_lib_table
+  (lib (name clumsyMIDI-rescue)(type Legacy)(uri ${KIPRJMOD}/clumsyMIDI-rescue.lib)(options "")(descr ""))
+  (lib (name gy-pcm5102)(type Legacy)(uri ${KIPRJMOD}/gy-pcm5102.lib)(options "")(descr ""))
+)

@@ -1,0 +1,118 @@
+
+(rules PCB clumsyMIDI
+  (snap_angle 
+    fortyfive_degree
+  )
+  (autoroute_settings
+    (fanout off)
+    (autoroute on)
+    (postroute on)
+    (vias on)
+    (via_costs 50)
+    (plane_via_costs 5)
+    (start_ripup_costs 100)
+    (start_pass_no 551)
+    (layer_rule F.Cu
+      (active on)
+      (preferred_direction horizontal)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 2.2)
+    )
+    (layer_rule B.Cu
+      (active on)
+      (preferred_direction vertical)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 1.9)
+    )
+  )
+  (rule
+    (width 250.0)
+    (clear 250.2)
+    (clear 125.0 (type smd_to_turn_gap))
+    (clear 62.6 (type smd_smd))
+  )
+  (padstack "Via[0-1]_900:600_um"
+    (shape
+      (circle F.Cu 900.0 0.0 0.0)
+    )
+    (shape
+      (circle B.Cu 900.0 0.0 0.0)
+    )
+    (attach off)
+  )
+  (padstack "Via[0-1]_1000:700_um"
+    (shape
+      (circle F.Cu 1000.0 0.0 0.0)
+    )
+    (shape
+      (circle B.Cu 1000.0 0.0 0.0)
+    )
+    (attach off)
+  )
+  (via 
+    "Via[0-1]_900:600_um" "Via[0-1]_900:600_um" default
+  )
+  (via 
+    "Via[0-1]_1000:700_um" "Via[0-1]_1000:700_um" default
+  )
+  (via 
+    "Via[0-1]_900:600_um-kicad_default" "Via[0-1]_900:600_um" "kicad_default"
+  )
+  (via 
+    "Via[0-1]_1000:700_um-kicad_default" "Via[0-1]_1000:700_um" "kicad_default"
+  )
+  (via 
+    "Via[0-1]_900:600_um-Power" "Via[0-1]_900:600_um" Power
+  )
+  (via 
+    "Via[0-1]_1000:700_um-Power" "Via[0-1]_1000:700_um" Power
+  )
+  (via_rule
+    default "Via[0-1]_900:600_um"
+  )
+  (via_rule
+    "kicad_default" "Via[0-1]_900:600_um-kicad_default"
+  )
+  (via_rule
+    Power "Via[0-1]_1000:700_um-Power"
+  )
+  (class default
+    (clearance_class default)
+    (via_rule default)
+    (rule
+      (width 250.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class "kicad_default"
+    GND "/ID_SD" "/ID_SC" /GPIO5 /GPIO6 /GPIO26 "/GPIO4(GCLK)" "/GPIO15(RXD0)"
+    "/GPIO17(GEN0)" "/GPIO27(GEN2)" "/GPIO22(GEN3)" "/GPIO23(GEN4)" "/GPIO24(GEN5)" "/GPIO25(GEN6)" "/GPIO10(SPI0_MOSI)" "/GPIO9(SPI0_MISO)"
+    "/GPIO11(SPI0_SCK)" "/GPIO8(SPI0_CE_N)" "/GPIO7(SPI1_CE_N)" "/GPIO12(PWM0)" "/GPIO13(PWM1)" /GPIO16 "/GPIO20(SPI1_MOSI)" "I2S_BCLK"
+    "I2S_DATA" "I2S_LRCLK" "Net-(A1-Pad7)" "Net-(A1-Pad8)" "Net-(A1-Pad9)" "Net-(A1-Pad10)" "Net-(A1-Pad11)" "Net-(A1-Pad12)"
+    "Net-(A1-Pad13)" "Net-(A1-Pad14)" "Net-(A1-Pad15)" "Net-(D1-Pad2)" "Net-(D1-Pad1)" "I2C_SDA" "I2C_SCL" "Net-(J2-Pad4)"
+    "Net-(J2-Pad1)" "Net-(J2-Pad3)" "Net-(J2-Pad5)" "Net-(J3-Pad4)" "Net-(J3-Pad1)" "Net-(J3-Pad2)" "Net-(J3-Pad3)" "Net-(J4-Pad4)"
+    "Net-(J4-Pad1)" "Net-(J4-Pad3)" "Net-(J4-Pad5)" "TX_TTL" "Net-(R1-Pad2)" "Net-(R6-Pad2)" "Net-(U1-Pad6)" "Net-(U1-Pad12)"
+    "Net-(U1-Pad10)" "Net-(U1-Pad2)" "Net-(U2-Pad3)"
+    (clearance_class "kicad_default")
+    (via_rule kicad_default)
+    (rule
+      (width 250.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class Power
+    +3V3 +5V
+    (clearance_class Power)
+    (via_rule Power)
+    (rule
+      (width 500.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+)
