@@ -51,7 +51,7 @@ type = ssd1306_i2c
 The option `gpio_thru` will also work with the MIDI Out port on clumsyMIDI, so use at your preference.
 
 ### Raspberry Pi OS
-You need to add the following to `/boot/config.txt` to get GPIO MIDI, I2S DAC, adn I2C support
+You need to add the following to `/boot/config.txt` to get GPIO MIDI, I2S DAC, and I2C support
 ```
 enable_uart=1
 dtoverlay=pi3-miniuart-bt
