@@ -2,8 +2,8 @@
 A Raspberry Pi expansion board containing a MIDI interface, DAC, and OLED display requiring only through-hole soldering skills. This is primarily intended as an all-in-one hardware solution for the [mt32-pi Roland MT-32 emulator](https://github.com/dwhinham/mt32-pi) but all features are usable with Raspberry Pi OS, too.
 
 <p align="center">
-  <img src="https://github.com/gmcn42/clumsyMIDI/raw/main/pictures/IMGP8915-2.jpg" height="340">
-  <img src="https://github.com/gmcn42/clumsyMIDI/raw/main/pictures/IMGP8907-1.jpg" height="340">
+  <img src="https://github.com/gmcn42/clumsyMIDI/raw/main/pictures/IMGP8915-2.jpg" height="300">
+  <img src="https://github.com/gmcn42/clumsyMIDI/raw/main/pictures/IMGP8907-1.jpg" height="300">
 </p>
 
 ## Features
@@ -23,8 +23,8 @@ You can get a zip file with the Gerber files from the [`gerber/` subfolder](http
 In case you want to make changes to the PCB before ordering somewhere, you can use [KiCAD](https://kicad.org/) and import the project.
 
 <p align="center">
-  <img src="https://github.com/gmcn42/clumsyMIDI/raw/main/pictures/IMGP8886.jpg" height="340">
-  <img src="https://github.com/gmcn42/clumsyMIDI/raw/main/pictures/IMGP8888.jpg" height="340">
+  <img src="https://github.com/gmcn42/clumsyMIDI/raw/main/pictures/IMGP8886.jpg" height="300">
+  <img src="https://github.com/gmcn42/clumsyMIDI/raw/main/pictures/IMGP8888.jpg" height="300">
 </p>
 
 ## Assembly
@@ -64,7 +64,7 @@ Also you need to comment out or remove the line `dtparam=audio=on`
 
 To get regular ALSA MIDI support you need to bridge `/dev/ttyAMA0` and an ALSA MIDI port. You can do this with [`ttymidi`](https://github.com/cjbarnes18/ttymidi).
 
-The I2C dislay is supported by the [Adafruit SSD1306 Python library](https://github.com/adafruit/Adafruit_Python_SSD1306.git), among others.
+The I2C display is supported by the [Adafruit SSD1306 Python library](https://github.com/adafruit/Adafruit_Python_SSD1306.git), among others.
 
 Have fun!
 
