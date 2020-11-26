@@ -12,7 +12,7 @@ A Raspberry Pi expansion board containing a MIDI interface, DAC, and OLED displa
 * 0.91" OLED display
 * large-ish 5V bypass capacitor which may help with slightly weak power supplies
 * works with [mt32-pi](https://github.com/dwhinham/mt32-pi) and Raspberry Pi OS
-* no SMT soldering required, suitable for DIY electronics beginners and clumsy people ;)
+* no SMT soldering required, so it is suitable for clumsy tinkerers ;)
 
 ## Schematic and BOM
 Schematic and BOM are available in the [`pdf/` subfolder](https://github.com/gmcn42/clumsyMIDI/tree/main/pdf).
