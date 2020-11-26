@@ -18,7 +18,7 @@ A Raspberry Pi expansion board containing a MIDI interface, DAC, and OLED displa
 Schematic and BOM are available in the [`pdf/` subfolder](https://github.com/gmcn42/clumsyMIDI/tree/main/pdf).
 
 ## How to get the PCB
-You can get a zip file with the Gerber files from the [`gerber/` subfolder](https://github.com/gmcn42/clumsyMIDI/tree/main/gerber) and let your favorite board house build the PCB. Alternatively, you can also order directly from PCBWAY via [this link](https://www.pcbway.com/project/shareproject/clumsyMIDI___Raspberry_Pi_expansion_board.html). Full disclosure: If you use this, I will get a small amount of money for your purchase.
+You can get a zip file with the Gerber files from the [`gerber/` subfolder](https://github.com/gmcn42/clumsyMIDI/tree/main/gerber) and let your favorite board house build the PCB. Alternatively, you can also order directly from PCBWAY via [this link](https://www.pcbway.com/project/shareproject/clumsyMIDI___Raspberry_Pi_expansion_board.html) for convenience. Full disclosure: If you use the link, PCBWAY will donate 10% of the PCB price to me. I want to make clear that the PCB design is completely free and you are in no way obligated or even encouraged to use that link.
 
 In case you want to make changes to the PCB before ordering somewhere, you can use [KiCAD](https://kicad.org/) and import the project.
 
