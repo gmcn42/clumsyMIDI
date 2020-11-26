@@ -26,9 +26,35 @@ It is possible to leave out some components, e.g. if you only need MIDI-In. Cons
 
 In standard configuration, the MIDI Thru output is available on a 5-pin header due to space constraints. If you do not need MIDI Out but want a MIDI Thru, it is possible to route the Thru signal to the MIDI-Out socket instead of the pin header. In that case, leave J4, R1, and R5 unpopulated and solder a wire between the footprint pads of J4 and R1 marked with a circle on the silkscreen.
 
+Be sure to use some kind of standoffs or similar when connecting clumsyMIDI to the PI. Without them, the board may sit lopsided and come in contact with the HDMI port, potentially causing a short circuit. Apart from that, it's more mechanically stable and simply looks nicer :). The BOM contains the brass standoffs I am using in the pictures.
+
 ## Software Config
 ### mt32-pi
+Follow the setup instructions on their site and then set the following options in `mt32-pi.cfg`:
+```
+usb = off
+output_device = i2s
+type = ssd1306_i2c
+```
+The option `gpio_thru` will also work with the MIDI Out port on clumsyMIDI, so use at your preference.
+
 ### Raspberry Pi OS
+You need to add the following to `/boot/config.txt` to get GPIO MIDI, I2S DAC, adn I2C support
+```
+enable_uart=1
+dtoverlay=pi3-miniuart-bt
+dtoverlay=midi-uart0
+
+dtparam=i2s=on
+dtoverlay=hifiberry-dac
+
+dtparam=i2c_arm=on,i2c_arm_baudrate=400000
+```
+Also you need to comment out or remove the line `dtparam=audio=on`
+
+To get regular ALSA MIDI support you need to bridge `/dev/ttyAMA0` and an ALSA MIDI port. You can do this with [`ttymidi`](https://github.com/cjbarnes18/ttymidi).
+
+The I2C dislay is supported by the [Adafruit SSD1306 Python library](https://github.com/adafruit/Adafruit_Python_SSD1306.git), among others.
 
 
 clumsyMIDI (c)2020 by A. Zdziarstek. This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/). [![CC BY-SA 4.0](https://licensebuttons.net/l/by-sa/4.0/88x31.png)](https://creativecommons.org/licenses/by-sa/4.0/)
