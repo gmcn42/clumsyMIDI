@@ -22,7 +22,7 @@ As all components are through-hole, you should get by with basic soldering skill
 
 As shown in the BOM, I recommend socketing U1 and U2 as they are the most likely casualties if defective MIDI devices are connected for some reason. Be mindful of the ICs' orientation. The notch of the 74HCT14 should be where the notch is on the silkscreen. Likewise, the H11L1's dot (marking for Pin 1) should also face the in the direction of the notch on the silkscreen. If inserted correctly, U1 and U2 will "face outward and away from each other".
 
-It is possible to leave out some components, e.g. if you only need MIDI-In. Consult the schematic for details.
+It is possible to leave out some components, e.g. if you only need MIDI-In. Consult [the schematic](https://github.com/gmcn42/clumsyMIDI/blob/main/pdf/clumsyMIDI-schematic.pdf) for details.
 
 In standard configuration, the MIDI Thru output is available on a 5-pin header due to space constraints. If you do not need MIDI Out but want a MIDI Thru, it is possible to route the Thru signal to the MIDI-Out socket instead of the pin header. In that case, leave J4, R1, and R5 unpopulated and solder a wire between the footprint pads of J4 and R1 marked with a circle on the silkscreen.
 
