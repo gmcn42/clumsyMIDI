@@ -4,10 +4,10 @@ EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
-Title ""
-Date "15 nov 2012"
-Rev ""
-Comp ""
+Title "clumsyMIDI schematic"
+Date "2020-11-20"
+Rev "1.1"
+Comp "ZDZ"
 Comment1 ""
 Comment2 ""
 Comment3 ""
