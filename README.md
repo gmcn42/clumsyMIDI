@@ -2,8 +2,8 @@
 A Raspberry Pi expansion board containing a MIDI interface, DAC, and OLED display requiring only through-hole soldering skills. This is primarily intended as an all-in-one hardware solution for the [mt32-pi Roland MT-32 emulator](https://github.com/dwhinham/mt32-pi) but all features are usable with Raspberry Pi OS, too.
 
 <p align="center">
-  <img src="https://github.com/gmcn42/clumsyMIDI/raw/main/pictures/IMGP8915-2.jpg" height="300">
-  <img src="https://github.com/gmcn42/clumsyMIDI/raw/main/pictures/IMGP8907-1.jpg" height="300">
+  [<img src="https://github.com/gmcn42/clumsyMIDI/raw/main/pictures/assembled_with_pi_small.jpg" height="300">](https://github.com/gmcn42/clumsyMIDI/raw/main/pictures/assembled_with_pi.jpg)
+  [<img src="https://github.com/gmcn42/clumsyMIDI/raw/main/pictures/assembled_top_small.jpg" height="300">](https://github.com/gmcn42/clumsyMIDI/raw/main/pictures/assembled_top.jpg)
 </p>
 
 ## Features
@@ -23,8 +23,8 @@ You can get a zip file with the Gerber files from the [releases page](https://gi
 In case you want to make changes to the PCB before ordering somewhere, you can use [KiCAD](https://kicad.org/) and import the project.
 
 <p align="center">
-  <img src="https://github.com/gmcn42/clumsyMIDI/raw/main/pictures/IMGP8886.jpg" height="300">
-  <img src="https://github.com/gmcn42/clumsyMIDI/raw/main/pictures/IMGP8888.jpg" height="300">
+  [<img src="https://github.com/gmcn42/clumsyMIDI/raw/main/pictures/pcb_top_small.jpg" height="300">](https://github.com/gmcn42/clumsyMIDI/raw/main/pictures/pcb_top.jpg")
+  [<img src="https://github.com/gmcn42/clumsyMIDI/raw/main/pictures/pcb_bottom_small.jpg" height="300">](https://github.com/gmcn42/clumsyMIDI/raw/main/pictures/pcb_bottom.jpg")
 </p>
 
 ## Assembly
@@ -34,7 +34,12 @@ As shown in the BOM, I recommend socketing U1 and U2 as they are the most likely
 
 It is possible to leave out some components, e.g. if you only need MIDI-In. Consult [the schematic](https://github.com/gmcn42/clumsyMIDI/blob/main/pdf/clumsyMIDI-schematic.pdf) for details.
 
-In standard configuration, the MIDI Thru output is available on a 5-pin header due to space constraints. If you do not need MIDI Out but want a MIDI Thru, it is possible to route the Thru signal to the MIDI-Out socket instead of the pin header. In that case, leave J4, R1, and R5 unpopulated and solder a wire between the footprint pads of J4 and R1 marked with a circle on the silkscreen.
+In standard configuration, the MIDI Thru output is available on a 5-pin header due to space constraints. If you do not need MIDI Out but want a MIDI Thru, it is possible to route the Thru signal to the MIDI-Out socket instead of the pin header. In that case, leave J4, R1, and R5 unpopulated and solder a wire between the footprint pads of J4 and R1 marked with a circle on the silkscreen, as shown in these two pictures (click for larger version):
+
+<p align="center">
+  [<img src="https://github.com/gmcn42/clumsyMIDI/raw/main/pictures/midithru-top_small.jpg" height="300">](https://github.com/gmcn42/clumsyMIDI/raw/main/pictures/midithru-top.jpg")
+  [<img src="https://github.com/gmcn42/clumsyMIDI/raw/main/pictures/midithru-bottom_small.jpg" height="300">](https://github.com/gmcn42/clumsyMIDI/raw/main/pictures/midithru-bottom.jpg")
+</p>
 
 Be sure to use some kind of standoffs or similar when connecting clumsyMIDI to the PI. Without them, the board may sit lopsided and come in contact with the HDMI port, potentially causing a short circuit. Apart from that, it's more mechanically stable and simply looks nicer :). The BOM contains the brass standoffs I am using in the pictures.
 
