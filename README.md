@@ -19,6 +19,13 @@ You can get a zip file with the Gerber files from the [releases page](https://gi
 
 In case you want to make changes to the PCB before ordering somewhere, you can use [KiCAD](https://kicad.org/) and import the project.
 
+### PCB Specs
+* PCB size (height * width): 56mm * 65mm
+* Layers: 2
+* Minimum drill size: 0.6mm
+* Minimum track size: 0.25mm (=9.84mil)
+* Minimum track clearance/spacing: 0.25mm (=9.84mil)
+* Surface finish: by preference (the pictured boards are lead-free HASL but pretty much anything will do)
 
   [<img src="https://github.com/gmcn42/clumsyMIDI/raw/main/pictures/pcb_top_small.jpg" height="300">](https://github.com/gmcn42/clumsyMIDI/raw/main/pictures/pcb_top.jpg)
   [<img src="https://github.com/gmcn42/clumsyMIDI/raw/main/pictures/pcb_bottom_small.jpg" height="300">](https://github.com/gmcn42/clumsyMIDI/raw/main/pictures/pcb_bottom.jpg)
