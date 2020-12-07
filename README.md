@@ -71,10 +71,31 @@ dtparam=i2c_arm=on,i2c_arm_baudrate=400000
 ```
 Also you need to comment out or remove the line `dtparam=audio=on`
 
+Additionally for I2C support, add the following line to `/etc/modules`:
+```
+i2c-dev
+```
+
 To get regular ALSA MIDI support you need to bridge `/dev/ttyAMA0` and an ALSA MIDI port. You can do this with [`ttymidi`](https://github.com/cjbarnes18/ttymidi).
+Once you have it compiled and installed, run the following in a terminal:
+```
+sudo ttymidi -s /dev/ttyAMA0 -b 38400
+```
+If you are asking yourself why it needs to be set to 38400 Baud: The line `dtoverlay=midi-uart0` causes the Pi's UART base clock to be slightly lowered, so that 38400 (a common RS232 baud rate) effectively becomes 31250 Baud which is MIDI-compatible.
+
+Now you when you run `aconnect -l` in another terminal, you should see a new MIDI client, something similar to
+```
+client 128: 'ttymidi' [type=user,pid=920]
+    0 'MIDI out     '
+    1 'MIDI in      '
+```
+Somewhat confusingly, the out/in naming is reversed because it is from the perspective of `ttymidi`. That means 'MIDI in' is what it receives from another application and then forwards to the UART. So if you want to play something on a synth connected to the clumsyMIDI's output, the correct command will be
+```
+aplaymidi -p 128:1 somefile.mid
+```
 
 The I2C display is supported by the [Adafruit SSD1306 Python library](https://github.com/adafruit/Adafruit_Python_SSD1306.git), among others.
 
 Have fun!
 
-clumsyMIDI ©2020 by A. Zdziarstek.<br>This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/).<br>[![CC BY-SA 4.0](https://licensebuttons.net/l/by-sa/4.0/88x31.png)](https://creativecommons.org/licenses/by-sa/4.0/)
+clumsyMIDI ©2020 by Andreas Zdziarstek.<br>This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/).<br>[![CC BY-SA 4.0](https://licensebuttons.net/l/by-sa/4.0/88x31.png)](https://creativecommons.org/licenses/by-sa/4.0/)
