@@ -38,14 +38,26 @@ As shown in the BOM, I recommend socketing U1 and U2 as they are the most likely
 
 It is possible to leave out some components, e.g. if you only need MIDI-In. Consult [the schematic](https://github.com/gmcn42/clumsyMIDI/blob/main/pdf/clumsyMIDI-schematic.pdf) for details.
 
+As I happily noticed people are actually really starting to build these things, I have opened the [discussions page](https://github.com/gmcn42/clumsyMIDI/discussions) of this project. If you have questions about anything related to the board and its assembly, feel free to open a topic!
+
+### A note on the DAC board solder bridges
+Before soldering on the DAC board please double-check that the solder bridges on the bottom of your GY-PCM5102 are configured as in the following picture:
+
+<img src="https://github.com/gmcn42/clumsyMIDI/raw/main/pictures/solderbridges.jpg" height="240">
+
+So: 1, 2, and 4 to L and 3 to H. This should be the standard factory-set config of at least one builder encountered a board with an unconnected bridge resulting in the DAC being permanently muted. If you have a multimeter you might also want to check good connection from the board's pins to rule out bad solder joints. FLT, FMT, and DEMP should have almost 0Ω to GND while XSMT should have almost 0Ω to pin 20 (top right) of the DAC chip itself.
+
+### Rewiring MIDI Thru to Out
 In standard configuration, the MIDI Thru output is available on a 5-pin header due to space constraints. If you do not need MIDI Out but want a MIDI Thru, it is possible to route the Thru signal to the MIDI-Out socket instead of the pin header. In that case, leave J4, R1, and R5 unpopulated and solder a wire between the footprint pads of J4 and R1 marked with a circle on the silkscreen, as shown in these two pictures (click for larger version):
 
   [<img src="https://github.com/gmcn42/clumsyMIDI/raw/main/pictures/midithru-top_small.jpg" height="300">](https://github.com/gmcn42/clumsyMIDI/raw/main/pictures/midithru-top.jpg)
   [<img src="https://github.com/gmcn42/clumsyMIDI/raw/main/pictures/midithru-bottom_small.jpg" height="300">](https://github.com/gmcn42/clumsyMIDI/raw/main/pictures/midithru-bottom.jpg)
 
+### Mechanical Parts
 Be sure to use some kind of standoffs or similar when connecting clumsyMIDI to the PI. Without them, the board may sit lopsided and come in contact with the HDMI port, potentially causing a short circuit. Apart from that, it's more mechanically stable and simply looks nicer :). The BOM contains the brass standoffs I am using in the pictures.
 
-A final general note: Use caution and common sense while working with electronics, especially while soldering stuff. As stated in the license, I am offering this PCB design as-is incuding any and all defects it may have and will not be held liable for any harm that comes to you or others as a result of using/building/looking at it.
+### A General Note
+Use caution and common sense while working with electronics, especially while soldering stuff. As stated in the license, I am offering this PCB design as-is incuding any and all defects it may have and will not be held liable for any harm that comes to you or others as a result of using/building/looking at it.
 
 ## Software Config
 ### mt32-pi
@@ -83,7 +95,7 @@ sudo ttymidi -s /dev/ttyAMA0 -b 38400
 ```
 If you are asking yourself why it needs to be set to 38400 Baud: The line `dtoverlay=midi-uart0` causes the Pi's UART base clock to be slightly lowered, so that 38400 (a common RS232 baud rate) effectively becomes 31250 Baud which is MIDI-compatible.
 
-Now you when you run `aconnect -l` in another terminal, you should see a new MIDI client, something similar to
+Now you when run `aconnect -l` in another terminal, you should see a new MIDI client. Something similar to:
 ```
 client 128: 'ttymidi' [type=user,pid=920]
     0 'MIDI out     '
