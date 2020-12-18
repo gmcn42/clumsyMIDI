@@ -45,7 +45,9 @@ Before soldering on the DAC board please double-check that the solder bridges on
 
 <img src="https://github.com/gmcn42/clumsyMIDI/raw/main/pictures/solderbridges.jpg" height="240">
 
-So: 1, 2, and 4 to L and 3 to H. This should be the standard factory-set config of at least one builder encountered a board with an unconnected bridge resulting in the DAC being permanently muted. If you have a multimeter you might also want to check good connection from the board's pins to rule out bad solder joints. FLT, FMT, and DEMP should have almost 0Ω to GND while XSMT should have almost 0Ω to pin 20 (top right) of the DAC chip itself.
+So: 1, 2, and 4 to L and 3 to H. This should be the standard factory-set config but at least one builder encountered a board with an unconnected bridge resulting in the DAC being permanently muted. If you have a multimeter you might also want to check good connection from the board's pins to rule out bad solder joints. FLT, FMT, and DEMP should have almost 0Ω to GND while XSMT should have almost 0Ω to pin 20 (top right) of the DAC chip itself.
+
+If yours are un- or wrongly set, you'll have to resolder them.
 
 ### Rewiring MIDI Thru to Out
 In standard configuration, the MIDI Thru output is available on a 5-pin header due to space constraints. If you do not need MIDI Out but want a MIDI Thru, it is possible to route the Thru signal to the MIDI-Out socket instead of the pin header. In that case, leave J4, R1, and R5 unpopulated and solder a wire between the footprint pads of J4 and R1 marked with a circle on the silkscreen, as shown in these two pictures (click for larger version):
