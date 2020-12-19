@@ -37,7 +37,7 @@ You can get a zip file with the Gerber files from the [releases page](https://gi
 
 In case you want to make changes to the PCB before ordering somewhere, you can use [KiCAD](https://kicad.org/) and import the project.
 
-***⚠IMPORTANT NOTE:⚠*** Before soldering down the DAC board make *sure* you check the assembly instructions below about the DAC's solder bridges. Their factory configuration appears to be varying from supplier to supplier and you may need to change them.
+***⚠IMPORTANT NOTE:⚠*** Before soldering down the DAC board please make *sure* you check the [assembly instructions below about the DAC's solder bridges](#an-important-note-on-the-dac-board-solder-bridges). Their factory configuration appears to be varying from supplier to supplier and you may need to change them.
 
 ### PCB Specs
 * PCB size (height * width): 56mm * 65mm
