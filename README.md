@@ -11,7 +11,7 @@ A Raspberry Pi expansion board containing a MIDI interface, DAC, and OLED displa
 - [How to get the PCB](#how-to-get-the-pcb)
   * [PCB Specs](#pcb-specs)
 - [Assembly](#assembly)
-  * [An ⚠IMPORTANT⚠ note on the DAC board solder bridges](#an-%E2%9A%A0important%E2%9A%A0-note-on-the-dac-board-solder-bridges)
+  * [An ⚠IMPORTANT⚠ note on the DAC board solder bridges](#an-important-note-on-the-dac-board-solder-bridges)
   * [Rewiring MIDI Thru to Out](#rewiring-midi-thru-to-out)
   * [Mechanical Parts](#mechanical-parts)
   * [A General Note](#a-general-note)
