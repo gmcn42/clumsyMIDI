@@ -3,6 +3,24 @@ A Raspberry Pi expansion board containing a MIDI interface, DAC, and OLED displa
 
 [<img src="https://github.com/gmcn42/clumsyMIDI/raw/main/pictures/assembled_with_pi_small.jpg" height="300">](https://github.com/gmcn42/clumsyMIDI/raw/main/pictures/assembled_with_pi.jpg) [<img src="https://github.com/gmcn42/clumsyMIDI/raw/main/pictures/assembled_top_small.jpg" height="300">](https://github.com/gmcn42/clumsyMIDI/raw/main/pictures/assembled_top.jpg)
 
+## Table of contents
+
+<!-- toc -->
+- [Features](#features)
+- [Schematic and BOM](#schematic-and-bom)
+- [How to get the PCB](#how-to-get-the-pcb)
+  * [PCB Specs](#pcb-specs)
+- [Assembly](#assembly)
+  * [An ⚠IMPORTANT⚠ note on the DAC board solder bridges](#an-%E2%9A%A0important%E2%9A%A0-note-on-the-dac-board-solder-bridges)
+  * [Rewiring MIDI Thru to Out](#rewiring-midi-thru-to-out)
+  * [Mechanical Parts](#mechanical-parts)
+  * [A General Note](#a-general-note)
+- [Software Config](#software-config)
+  * [mt32-pi](#mt32-pi)
+  * [Raspberry Pi OS](#raspberry-pi-os)
+
+<!-- tocstop -->
+
 ## Features
 * TI PCM5102 I2S HiFi DAC (using the ubiquitous GY-PCM5102 carrier board)
 * GPIO MIDI interface with in, out, and thru
