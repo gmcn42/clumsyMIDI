@@ -1,7 +1,7 @@
 # clumsyMIDI
 A Raspberry Pi expansion board containing a MIDI interface, DAC, and OLED display requiring only through-hole soldering skills. This is primarily intended as an all-in-one hardware solution for the [mt32-pi Roland MT-32 emulator](https://github.com/dwhinham/mt32-pi) but all features are usable with Raspberry Pi OS, too.
 
-  [<img src="https://github.com/gmcn42/clumsyMIDI/raw/main/pictures/assembled_with_pi_small.jpg" height="300">](https://github.com/gmcn42/clumsyMIDI/raw/main/pictures/assembled_with_pi.jpg) [<img src="https://github.com/gmcn42/clumsyMIDI/raw/main/pictures/assembled_top_small.jpg" height="300">](https://github.com/gmcn42/clumsyMIDI/raw/main/pictures/assembled_top.jpg)
+[<img src="https://github.com/gmcn42/clumsyMIDI/raw/main/pictures/assembled_with_pi_small.jpg" height="300">](https://github.com/gmcn42/clumsyMIDI/raw/main/pictures/assembled_with_pi.jpg) [<img src="https://github.com/gmcn42/clumsyMIDI/raw/main/pictures/assembled_top_small.jpg" height="300">](https://github.com/gmcn42/clumsyMIDI/raw/main/pictures/assembled_top.jpg)
 
 ## Features
 * TI PCM5102 I2S HiFi DAC (using the ubiquitous GY-PCM5102 carrier board)
@@ -19,6 +19,8 @@ You can get a zip file with the Gerber files from the [releases page](https://gi
 
 In case you want to make changes to the PCB before ordering somewhere, you can use [KiCAD](https://kicad.org/) and import the project.
 
+***⚠IMPORTANT NOTE:⚠*** Before soldering down the DAC board make *sure* you check the assembly instructions below about the DAC's solder bridges. Their factory configuration appears to be varying from supplier to supplier and you may need to change them.
+
 ### PCB Specs
 * PCB size (height * width): 56mm * 65mm
 * Layers: 2
@@ -27,8 +29,8 @@ In case you want to make changes to the PCB before ordering somewhere, you can u
 * Minimum track clearance/spacing: 0.25mm (=9.84mil)
 * Surface finish: by preference (the pictured boards are lead-free HASL but pretty much anything will do)
 
-  [<img src="https://github.com/gmcn42/clumsyMIDI/raw/main/pictures/pcb_top_small.jpg" height="300">](https://github.com/gmcn42/clumsyMIDI/raw/main/pictures/pcb_top.jpg)
-  [<img src="https://github.com/gmcn42/clumsyMIDI/raw/main/pictures/pcb_bottom_small.jpg" height="300">](https://github.com/gmcn42/clumsyMIDI/raw/main/pictures/pcb_bottom.jpg)
+[<img src="https://github.com/gmcn42/clumsyMIDI/raw/main/pictures/pcb_top_small.jpg" height="300">](https://github.com/gmcn42/clumsyMIDI/raw/main/pictures/pcb_top.jpg)
+[<img src="https://github.com/gmcn42/clumsyMIDI/raw/main/pictures/pcb_bottom_small.jpg" height="300">](https://github.com/gmcn42/clumsyMIDI/raw/main/pictures/pcb_bottom.jpg)
 
 
 ## Assembly
@@ -40,7 +42,7 @@ It is possible to leave out some components, e.g. if you only need MIDI-In. Cons
 
 As I happily noticed people are actually really starting to build these things, I have opened the [discussions page](https://github.com/gmcn42/clumsyMIDI/discussions) of this project. If you have questions about anything related to the board and its assembly, feel free to open a topic!
 
-### A note on the DAC board solder bridges
+### An ⚠IMPORTANT⚠ note on the DAC board solder bridges
 Before soldering on the DAC board please double-check that the solder bridges on the bottom of your GY-PCM5102 are configured as in the following picture:
 
 <img src="https://github.com/gmcn42/clumsyMIDI/raw/main/pictures/solderbridges.jpg" height="240">
@@ -52,8 +54,8 @@ If yours are un- or wrongly set, you'll have to resolder them.
 ### Rewiring MIDI Thru to Out
 In standard configuration, the MIDI Thru output is available on a 5-pin header due to space constraints. If you do not need MIDI Out but want a MIDI Thru, it is possible to route the Thru signal to the MIDI-Out socket instead of the pin header. In that case, leave J4, R1, and R5 unpopulated and solder a wire between the footprint pads of J4 and R1 marked with a circle on the silkscreen, as shown in these two pictures (click for larger version):
 
-  [<img src="https://github.com/gmcn42/clumsyMIDI/raw/main/pictures/midithru-top_small.jpg" height="300">](https://github.com/gmcn42/clumsyMIDI/raw/main/pictures/midithru-top.jpg)
-  [<img src="https://github.com/gmcn42/clumsyMIDI/raw/main/pictures/midithru-bottom_small.jpg" height="300">](https://github.com/gmcn42/clumsyMIDI/raw/main/pictures/midithru-bottom.jpg)
+[<img src="https://github.com/gmcn42/clumsyMIDI/raw/main/pictures/midithru-top_small.jpg" height="300">](https://github.com/gmcn42/clumsyMIDI/raw/main/pictures/midithru-top.jpg)
+[<img src="https://github.com/gmcn42/clumsyMIDI/raw/main/pictures/midithru-bottom_small.jpg" height="300">](https://github.com/gmcn42/clumsyMIDI/raw/main/pictures/midithru-bottom.jpg)
 
 ### Mechanical Parts
 Be sure to use some kind of standoffs or similar when connecting clumsyMIDI to the PI. Without them, the board may sit lopsided and come in contact with the HDMI port, potentially causing a short circuit. Apart from that, it's more mechanically stable and simply looks nicer :). The BOM contains the brass standoffs I am using in the pictures.
